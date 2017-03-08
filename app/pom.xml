@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.soumyak</groupId>
+	<artifactId>sfg-thymeleaf-course</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>sfg-thymeleaf-course</name>
+	<description>Thymeleaf Course</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.3.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+
+	<scm>
+		<url>https://github.com/soumyakbhattacharyya/sfg-thymeleaf-course</url>
+		<connection>scm:git:git@github.com:soumyakbhattacharyya/sfg-thymeleaf-course.git</connection>
+		<developerConnection>scm:git:git@github.com:soumyakbhattacharyya/sfg-thymeleaf-course.git</developerConnection>
+	  <tag>HEAD</tag>
+  </scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+
+		<!--testing deps-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<distributionManagement>
+	    <repository>
+	        <id>central</id>
+	        <name>20c68850b84d-releases</name>
+	        <url>http://localhost:8081/artifactory/libs-release</url>
+	    </repository>
+	</distributionManagement>
+
+	<build>
+		<!-- To define the plugin version in your parent POM -->
+	    <pluginManagement>
+	      <plugins>
+	        <plugin>
+	          <groupId>org.codehaus.mojo</groupId>
+	          <artifactId>sonar-maven-plugin</artifactId>
+	          <version>2.7.1</version>
+	        </plugin>
+	      </plugins>
+	    </pluginManagement>
+		<plugins>
+			 <plugin>
+	          <groupId>org.codehaus.mojo</groupId>
+	          <artifactId>sonar-maven-plugin</artifactId>
+	          <version>2.7.1</version>
+	        </plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.15.3</version>
+				<configuration>
+					<dockerHost>http://192.168.144.1:2375</dockerHost>
+					<verbose>true</verbose>
+					<images>
+						<image>
+							<name>springframeworkguru/masteringthymeleaf</name>
+							<build>
+								<dockerFile>Dockerfile</dockerFile>
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+							</build>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
