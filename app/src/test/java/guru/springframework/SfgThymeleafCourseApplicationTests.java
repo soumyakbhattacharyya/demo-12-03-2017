@@ -15,4 +15,14 @@ public class SfgThymeleafCourseApplicationTests {
 	public void contextLoads() {
 	}
 
+	@Test
+	public void testProductListAppears() {
+
+	}
+
+	@Test
+	public void testProductDetailAppears() {
+
+	}
+
 }
