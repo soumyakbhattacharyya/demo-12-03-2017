@@ -63,13 +63,13 @@
 		</dependency>
 	</dependencies>
 
-	<distributionManagement>
-	   <snapshotRepository>
+     <distributionManagement>
+      <snapshotRepository>
         <id>snapshots</id>
-        <name>20c68850b84d-snapshots</name>
+        <name>986c7e448709-snapshots</name>
         <url>http://localhost:8081/artifactory/libs-snapshot</url>
-       </snapshotRepository>
-	</distributionManagement>
+      </snapshotRepository>
+    </distributionManagement>
 
 	<build>
 		<!-- To define the plugin version in your parent POM -->
