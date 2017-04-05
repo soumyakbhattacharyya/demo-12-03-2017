@@ -17,8 +17,8 @@ import java.util.Map;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    private static final String price = "199";
-    // private static final String price = "99";
+    // private static final String price = "199";
+    private static final String price = "99";
 
 	private Map<Integer, Product> productMap;
 
