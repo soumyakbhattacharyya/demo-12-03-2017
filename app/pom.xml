@@ -63,12 +63,13 @@
 		</dependency>
 	</dependencies>
 
-     <distributionManagement>
-      <snapshotRepository>
+
+    <distributionManagement>
+     <snapshotRepository>
         <id>snapshots</id>
-        <name>986c7e448709-snapshots</name>
+        <name>692386d32473-snapshots</name>
         <url>http://localhost:8081/artifactory/libs-snapshot</url>
-      </snapshotRepository>
+     </snapshotRepository>
     </distributionManagement>
 
 	<build>
